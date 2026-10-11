@@ -159,6 +159,18 @@ section {
   inset: 0;  /* stretches the link's clickable area over the whole card */
 }
 
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top left;  /* if an image is the wrong shape, keep the top-left corner */
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
 .card:focus-within {
   border-color: var(--accent);  /* shows which card has keyboard focus */
 }
