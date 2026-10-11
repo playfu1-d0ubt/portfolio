@@ -103,6 +103,7 @@ nav {
 }
 
 nav a {
+  padding: 0.4rem 0;  /* makes the link taller, so it's easier to tap */
   color: var(--text);
   text-decoration-color: var(--accent);
 }
@@ -120,7 +121,7 @@ section {
 /* the cards sit in a grid that fits as many 16rem columns as there is room for */
 #projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
   gap: 1.25rem;
 }
 
@@ -134,19 +135,32 @@ section {
   flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-left: 4px solid var(--accent);  /* the red edge that makes each card look like a panel */
+  border-left: 4px solid var(--accent);
   border-radius: 6px;
   padding: 1.25rem;
+  position: relative;  /* lets the link below stretch over the whole card */
   transition: border-color 0.2s;
 }
 
-.card:hover {
-  border-color: var(--accent);
+@media (hover: hover) {
+  .card:hover {
+    border-color: var(--accent);
+  }
 }
 
 .card h3 {
   margin: 0 0 0.5rem;
   font-size: 1.25rem;
+}
+
+.card h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;  /* stretches the link's clickable area over the whole card */
+}
+
+.card:focus-within {
+  border-color: var(--accent);  /* shows which card has keyboard focus */
 }
 
 .card p {
@@ -213,5 +227,36 @@ footer {
 
   .card {
     transition: none;
+  }
+}
+/* ---------- small screens (phones) ---------- */
+@media (max-width: 40rem) {
+  body {
+    font-size: 1.0625rem;
+  }
+
+  header, main, footer {
+    padding: 0 1rem;
+  }
+
+  .intro {
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .intro p {
+    font-size: 1.125rem;
+  }
+
+  section {
+    padding-top: 2rem;
+  }
+
+  footer {
+    margin-top: 2rem;
   }
 }
