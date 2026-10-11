@@ -9,6 +9,18 @@
 
   --body-font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --code-font: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas, monospace;
+  color-scheme: dark;   /* tells the browser to draw scrollbars and form controls dark too */
+}
+
+/* ---------- light theme: used when the toggle (or your device's setting) asks for it ---------- */
+[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f6f5f2;
+  --surface: #ffffff;
+  --border: #d3d6db;
+  --text: #1b1e23;
+  --muted: #4a525c;
+  --accent: #c42b32;
 }
 
 /* ---------- base ---------- */
@@ -271,4 +283,19 @@ footer {
   footer {
     margin-top: 2rem;
   }
+}
+/* ---------- theme toggle button ---------- */
+#theme-toggle {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-family: var(--code-font);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+#theme-toggle:hover {
+  border-color: var(--accent);
 }
