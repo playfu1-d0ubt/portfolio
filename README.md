@@ -20,7 +20,7 @@ To view it online, open the live site above.
 To run it on your own computer:
 
 ```bash
-git clone git@github.com:playfu1-d0ubt/ADD-YOUR-REPO-NAME.git
+git clone git@github.com:playfu1-d0ubt/portfolio.git
 cd ADD-YOUR-REPO-NAME
 ```
 
