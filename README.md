@@ -21,7 +21,7 @@ To run it on your own computer:
 
 ```bash
 git clone git@github.com:playfu1-d0ubt/portfolio.git
-cd ADD-YOUR-REPO-NAME
+cd portfolio
 ```
 
 Then open `index.html` in your browser, or start a small local server and go to `http://localhost:8000`:
